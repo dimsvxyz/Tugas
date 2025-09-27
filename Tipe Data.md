@@ -1,93 +1,58 @@
-Sebuah data memiliki tipe yang berbeda-beda. Dalam Python, tipe data ini saya kelompokkan menjadi dua kategori utama: Tipe Data Primitif dan Tipe Data Koleksi 
+Di NumPy, dtype bukan sekadar label namun sebuah objek metadata yang memberi tahu sistem komputer secara spesifik bagaimana cara menginterpretasikan dan mengelola byte data di dalam array (ndarray). dtype secara eksplisit mendefinisikan ukuran memori (dalam bit) yang harus dialokasikan untuk setiap elemen dalam array (misalnya, int32 berarti 4 byte per elemen). Semua elemen dalam satu ndarray diwajibkan memiliki dtype yang sama. 
+
+## Tipe Data
+
+A. Integer (Bilangan Bulat)
+NumPy membagi integer menjadi tipe bertanda (signed) (dapat menyimpan positif dan negatif) dan tak bertanda (unsigned) (hanya positif). 
+
+```Tipe (Contoh)	Ukuran Bit	Rentang Nilai	Aplikasi Umum
+np.int64	64-bit	Rentang nilai yang sangat besar	Tipe default untuk integer, menjamin keamanan data.
+np.int32	32-bit	Rentang nilai hingga ≈2 Miliar	Hemat memori, cocok jika rentang nilai data sudah terjamin.
+np.uint8	8-bit	0 hingga 255	Penting untuk image processing, di mana setiap piksel diwakili oleh 1 byte.
+
+B. Floating Point (Bilangan Desimal)
+Tipe float penting untuk  menangani angka desimal.
+
+```Tipe (Contoh)	Ukuran Bit	Presisi	Aplikasi Umum
+np.float64	64-bit	Presisi Ganda (Double Precision)	Tipe default float, digunakan ketika presisi perhitungan sangat penting (misalnya, fisika, keuangan).
+np.float32	32-bit	Presisi Tunggal (Single Precision)	Digunakan secara luas dalam deep learning dan grafika komputer untuk meningkatkan kecepatan komputasi dan mengurangi kebutuhan memori GPU.
+np.float16	16-bit	Presisi Setengah	Digunakan dalam Machine Learning tingkat lanjut (misalnya, model Transformer) untuk efisiensi memori yang ekstrem.
+
+C. Non Numerik
+1. np.bool_ (Boolean)
+Representasi logika (True atau False).
+Tipe ini hanya menyimpan salah satu dari dua nilai: True (diwakili sebagai 1) atau False (diwakili sebagai 0). Meskipun hanya 1 byte, ini adalah tipe yang paling efisien untuk logika.Dimana array digunakan sebagai filter untuk memilih elemen tertentu dari array lain yang memenuhi kondisi True. Digunakan untuk membuat masker yang memilih semua data yang lebih besar dari suatu nilai tertentu.
+
+2. np.datetime64 (Tanggal dan Waktu)
+Analisis Deret Waktu (Time Series), perhitungan perbedaan waktu.
+NumPy menyediakan datetime64 untuk representasi data tanggal dan waktu secara presisi dan efisien, jauh lebih baik daripada objek datetime Python standar untuk operasi array skala besar. Tipe ini memungkinkan kita melakukan aritmatika waktu yang mudah (misalnya, mengurangi dua tanggal untuk mendapatkan durasi) dan menentukan resolusi waktu (seperti hari, jam, atau nanodetik), misalnya: datetime64[D] untuk presisi hari.
+
+3. 'U' + ukuran (Unicode String)
+Menyimpan data teks.
+Tidak seperti string Python yang ukurannya dinamis, NumPy menggunakan string berukuran tetap. Tipe ini dideklarasikan dengan format 'U' (Unicode) diikuti oleh angka yang menunjukkan panjang maksimum string (misalnya, 'U10' berarti string maksimum 10 karakter). Kekurangan utama tipe ini adalah jika string melebihi ukuran yang ditentukan, maka string akan terpotong. Digunakan untuk menyimpan label kategori atau nama kolom, di mana panjang teks biasanya sudah diketahui atau terbatas.
 
 
-Tipe Data Primitif
-Tipe data primitif adalah jenis data yang paling dasar dalam pemrograman. Tipe data ini hanya menyimpan satu nilai (single value) saja.
+```import numpy as np
 
-1. Numbers (Angka)
-Tipe data untuk nilai-nilai angka.
+int_array = np.array([ , , , ], dtype=np.int32)
+print("Integer Array:", int_array, "dtype:", int_array.dtype)
 
-Integer (int): Bilangan bulat, baik positif maupun negatif, dan tidak memiliki angka desimal.
+float_array = np.array([ , , , ], dtype=np.float64)
+print("Floating Point Array:", float_array, "dtype:", float_array.dtype)
 
-Contoh: 1, -18, 666, dan 0.
+uint_array = np.array([ , , , ], dtype=np.uint8)
+print("Unsigned Int Array:", uint_array, "dtype:", uint_array.dtype, "\n")
 
-Float (float): Bilangan riil yang bisa mewakili bilangan bulat atau bilangan desimal (memiliki titik).
+complex_array = np.array([ , , , ], dtype=np.complex64)
+print("Complex Array:", complex_array, "dtype:", complex_array.dtype, "\n")
 
-Contoh: 3.14, 1.0 (walaupun bulat, ia ditandai sebagai float).
+bool_array = np.array([ , , , ], dtype=np.bool_)
+print("Boolean Array:", bool_array,"dtype:", bool_array.dtype, "\n")
 
-Complex (complex): Bilangan kompleks. (Tipe ini tidak akan kita gunakan di kelas ini, tapi perlu diketahui.)
+datetime_array = np.array([ , , , ], dtype='datetime64[D]')
+print("Datetime Array:", datetime_array, "dtype:", datetime_array.dtype, "\n")
 
-Contoh: 1+2j.
-
-2. Boolean (bool)
-Boolean merupakan tipe data yang sangat penting karena hanya bernilai True (Benar) atau False (Salah). Tipe data ini merepresentasikan nilai kebenaran (truth values) dan dipakai dalam logika program (kondisi if/else).
-
-Contoh:
-
-Python
-
-print(10 > 5)  # Hasilnya: True
-print(10 == 5) # Hasilnya: False
-
-Nilai yang Dianggap False (Falsy Values)
-Sebenarnya, hampir semua variabel yang memiliki nilai bisa dievaluasi dan menghasilkan nilai True. Hanya ada beberapa nilai yang secara default akan dianggap bernilai False, yaitu:
-
-Nilai yang sudah didefinisikan salah: None dan False.
-
-Angka nol dari semua tipe numerik: 0, 0.0, 0j.
-
-Urutan (sequence) dan koleksi (collection) yang kosong: "" (string kosong), () (tuple kosong), {} (dictionary kosong), set() (set kosong), range(0).
-
-3. String (str)
-String merupakan urutan karakter (huruf, angka, simbol) yang digunakan untuk data teks. Ketika saya membuat variabel bernilai string, saya harus mengapitnya dengan tanda kutip tunggal ('') atau ganda ("").
-
-Contoh: "Apple Juice", 'Belajar Python'.
+string_array = np.array(["Halo", "NumPy", "DataScience", "Kece"], dtype='<U...')
+print("Unicode String Array:", string_array, "dtype:", string_array.dtype, "\n")
 
 
-
-Tipe Data Koleksi (Collection)
-Tipe data koleksi menyimpan satu atau lebih data primitif sebagai satu kelompok. Ini memungkinkan kita mengelola banyak data sekaligus.
-
-1. List
-List merupakan jenis kumpulan data yang terurut (ordered) dan dapat diubah (mutable). List adalah tipe data yang sangat sering saya gunakan di Python.
-
-Inisialisasi: Menggunakan kurung siku [], dan setiap elemennya dipisahkan dengan koma.
-
-Contoh: x = [1, 2.2, "Ea"]
-
-Catatan Penting: Nilai dalam list selalu dimulai dari indeks ke-0. Jadi, nilai 1 pada list di atas adalah elemen pada indeks ke-0.
-
-2. Tuple
-Tuple bisa dibilang mirip dengan List, namun tidak dapat diubah (immutable) elemennya setelah dideklarasikan. Umumnya, tuple saya gunakan untuk data yang bersifat sekali deklarasi dan eksekusinya cenderung lebih cepat.
-
-Inisialisasi: Menggunakan tanda kurung (), dan setiap elemen dipisahkan dengan koma.
-
-Contoh: x = (1, "Black", 1+2j)
-
-3. Set
-Set merupakan kumpulan item yang bersifat unik dan tanpa urutan (unordered collection). Set otomatis akan menghilangkan elemen duplikat.
-
-Inisialisasi: Menggunakan tanda kurawal {}, dan setiap elemen dipisahkan dengan koma.
-
-Contoh: x = {1, 4, 9, 7, 13}
-
-4. Dictionary (dict)
-Dictionary pada Python merupakan kumpulan pasangan kunci-nilai (key-value pairs) yang bersifat tidak berurutan (meskipun terurut sejak Python 3.7). Dictionary sangat berguna untuk menyimpan data terstruktur, dari yang kecil hingga besar.
-
-Aturan Definisi:
-
-Setiap elemen pasangan kunci-nilai dipisahkan dengan koma (,).
-
-Kunci dan nilai dipisahkan dengan titik dua (:).
-
-Kunci dan nilai dapat berupa tipe variabel/objek apa pun.
-
-Contoh:
-
-Python
-
-x = {
-    'name': 'Duke',
-    'age': 20,
-    'isMarried': False
-}
