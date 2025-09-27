@@ -5,15 +5,13 @@ Di NumPy, dtype bukan sekadar label namun sebuah objek metadata yang memberi tah
 A. Integer (Bilangan Bulat)
 NumPy membagi integer menjadi tipe bertanda (signed) (dapat menyimpan positif dan negatif) dan tak bertanda (unsigned) (hanya positif). 
 
-```Tipe (Contoh)	Ukuran Bit	Rentang Nilai	Aplikasi Umum
 np.int64	64-bit	Rentang nilai yang sangat besar	Tipe default untuk integer, menjamin keamanan data.
 np.int32	32-bit	Rentang nilai hingga ≈2 Miliar	Hemat memori, cocok jika rentang nilai data sudah terjamin.
-np.uint8	8-bit	0 hingga 255	Penting untuk image processing, di mana setiap piksel diwakili oleh 1 byte. ```
+np.uint8	8-bit	0 hingga 255	Penting untuk image processing, di mana setiap piksel diwakili oleh 1 byte. 
 
 B. Floating Point (Bilangan Desimal)
 Tipe float penting untuk  menangani angka desimal.
 
-```Tipe (Contoh)	Ukuran Bit	Presisi	Aplikasi Umum
 np.float64	64-bit	Presisi Ganda (Double Precision)	Tipe default float, digunakan ketika presisi perhitungan sangat penting (misalnya, fisika, keuangan).
 np.float32	32-bit	Presisi Tunggal (Single Precision)	Digunakan secara luas dalam deep learning dan grafika komputer untuk meningkatkan kecepatan komputasi dan mengurangi kebutuhan memori GPU.
 np.float16	16-bit	Presisi Setengah	Digunakan dalam Machine Learning tingkat lanjut (misalnya, model Transformer) untuk efisiensi memori yang ekstrem.```
