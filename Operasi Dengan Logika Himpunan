@@ -1,0 +1,56 @@
+A) Definisi
+  Adalah operasi matematika pada pemrograman dengan menerapkan prinisp-prinsip dasar dalam himpunan seperti irisan, gabungan, komplemen pada sebuah array yang
+  digunakan untuk menganalisis hubungan, persamaan, perbedaan, dan karakteristik antar-himpunan. Logika himpunan sering kali dikaitkan dengan array boolean 
+  khususnya analisis data dalam memfilter atau membandingkan kondisi pada data. 
+  Berikut tujuan dan fungsi dari operasi logika himpunan yaitu:
+  - Untuk cleaning data tau membersihkan data dengan menghilangkan duplikat sebelum analisis
+  - Membandingkan dua kelompok data untuk menemukan elemen yang sama atau berbeda
+  - Memastikan atau memvalidasi konsistensi dari data
+  - Menggabungkan data dari berbagai sumber
+
+  B) Jenis-jenis Operasi Logika Himpunan dalam NumPy 
+  Terdapat 2 bagian utama dari operasi logika himpunan:
+     1. Operasi himpunan matematis (set operations)
+        Cara kerja fungsi ini adalah dengan melakukan asumsi bahwa sebuah input adalah kumpulan dari elemen. 
+        - np.uniquer(arr) dengan bentuk operasi himpunannya yaitu (-) yang artinya mengembalikan elemen unik array setelah diurutkan
+        - np.union1d(a, b) dengan bentuk operasi himpunannya yaitu (A ∪ B) yang artinya menggabungkan data a dan b
+        - np.intersect1d(a, b) dengan bentuk operasi himpunannya yaitu (A ∩ B) yang artinya irisan atau elemen yang muncul di a dan b
+        - np.setdiff1d(a, b) dengan bentuk operasi himpunannya yaitu (A − B) yang artinya selisih atau elemen di a tapi tidak ada di b
+        - np.setxor1d(a, b) dengan bentuk operasi himpunannya yaitu (A ⊕ B) yang artinya elemen yang ada di salah satu set tapi tidak keduanya
+
+      2. Operasi logika boolean
+         - operator AND (&) atau bisa juga menggunakan bentuk lain yaitu np.logical_and(a, b)
+         - operator OR (|) atau bisa juga menggunakan bentuk lain yaitu np.logical_or(a, b)
+         - operator NOT (~) atau bisa juga menggunakan bentuk lain yaitu np.logical_not(a, b)
+         - operator XOR (^)
+  C) Contoh penerapan operasi logika himpunan
+       1. import numpy as np
+
+          nilaikelas_A = np.array([91, 72, 83, 64, 55, 72, 86])  
+          nilaikelas_B = np.array([64, 55, 107, 68, 79, 91])
+
+          unik_A = np.unique(nilaikelas_A)
+          unik_B = np.unique(nilaikelas_B)
+          print("\nUnik Kelas A:", unik_A)
+          print("Unik Kelas B:", unik_B)
+
+          semua_nilai = np.union1d(nilaikelas_A, nilaikelas_B)
+          print("\nGabungan nilai (A ∪ B):", semua_nilai)
+
+          nilai_bersama = np.intersect1d(nilaikelas_A, nilaikelas_B)
+          print("nilai yang sama (A ∩ B):", nilai_bersama)
+
+          hanyakelas_A = np.setdiff1d(nilaikelas_A, nilaikelas_B)
+          print("Hanya nilai kelas A (A − B):", hanyakelas_A)
+
+          tidak_bersama = np.setxor1d(nilaikelas_A, nilaikelas_B)
+          print("nilai yang beda (A ⊕ B):", tidak_bersama)
+        berdasarkan kode diatas maka output yang akan dihasilkan yaitu:
+
+        Unik Kelas A: [55 64 72 83 86 91]
+        Unik Kelas B: [ 55  64  68  79  91 107]
+
+        Gabungan nilai (A ∪ B): [ 55  64  68  72  79  83  86  91 107]
+        nilai yang sama (A ∩ B): [55 64 91]
+        Hanya nilai kelas A (A − B): [72 83 86]
+        nilai yang beda (A ⊕ B): [ 68  72  79  83  86 107]
