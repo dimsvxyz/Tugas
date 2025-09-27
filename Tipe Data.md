@@ -2,7 +2,7 @@ Di NumPy, dtype bukan sekadar label namun sebuah objek metadata yang memberi tah
 
 ## Tipe Data
 
-'''A. Integer (Bilangan Bulat)
+```A. Integer (Bilangan Bulat)
 NumPy membagi integer menjadi tipe bertanda (signed) (dapat menyimpan positif dan negatif) dan tak bertanda (unsigned) (hanya positif). 
 
 np.int64	64-bit	Rentang nilai yang sangat besar	Tipe default untuk integer, menjamin keamanan data.
@@ -30,7 +30,7 @@ Menyimpan data teks.
 Tidak seperti string Python yang ukurannya dinamis, NumPy menggunakan string berukuran tetap. Tipe ini dideklarasikan dengan format 'U' (Unicode) diikuti oleh angka yang menunjukkan panjang maksimum string (misalnya, 'U10' berarti string maksimum 10 karakter). Kekurangan utama tipe ini adalah jika string melebihi ukuran yang ditentukan, maka string akan terpotong. Digunakan untuk menyimpan label kategori atau nama kolom, di mana panjang teks biasanya sudah diketahui atau terbatas.
 
 
-```import numpy as np
+import numpy as np
 
 int_array = np.array([ , , , ], dtype=np.int32)
 print("Integer Array:", int_array, "dtype:", int_array.dtype)
@@ -50,7 +50,7 @@ print("Boolean Array:", bool_array,"dtype:", bool_array.dtype)
 datetime_array = np.array([ , , , ], dtype='datetime64[D]')
 print("Datetime Array:", datetime_array, "dtype:", datetime_array.dtype)
 
-string_array = np.array(["Halo", "NumPy", "DataScience", "Kece"], dtype='<U...')
+string_array = np.array([ , , , ], dtype='<U...')
 print("Unicode String Array:", string_array, "dtype:", string_array.dtype)
 
 
