@@ -1,0 +1,47 @@
+A) Definisi
+Dalam dunia pemrograman, boolean merupakan jenis tipe data yang hanya memiliki dua nilai yaitu Benar (True) dan Salah (False). Boolean pertama kali ditemukan oleh George Boole yang mendefinisikan
+suatu sistem aljabar logika dengan operasi AND, OR, NOT dan dan operator perbandingan (==, !=, <, >, <=, >=).
+Berikut merupakan tujuan dan fungsi dari boolean :
+- Melakukan kontrol terhadap keputusan tertentu dalam suatu program, kontrol yang digunakan biasanya dinyatakan dalam kondisi If, For dan While.
+- Melakukan operasi pada elemen array secara element-wise (khususnya dengan NumPy).
+- Untuk menampilkan data berdasarkan kriteria yang telah ditentukan
+- Mengidentifikasi dan menangani data atau inputan yang tidak valid
+
+B) Operator Logika Boolean
+
+- AND: Hasilnya True jika kedua kondisi bernilai True. Misalnya, True AND True menghasilkan True, sementara True AND False akan menghasilkan False.
+- OR: Hasilnya True jika salah satu kondisi bernilai True. Misalnya, True OR False menghasilkan True.
+- NOT: Mengubah nilai dari True menjadi False dan sebaliknya. Jika nilai adalah True maka NOT akan menghasilkan False, dan begitupun sebaliknya.
+- XOR (Exclusive OR): Hanya menghasilkan true saat tepat satu operan bernilai true. Jika kedua operan sama (keduanya true atau keduanya false), maka hasilnya false.
+
+C) Operator Perbandingan Boolean
+- == (sama dengan). Contoh 4 == 4 (True)
+- != (tidak sama dengan). Contoh 8 != 4 (True)
+- < (lebih kecil). Contoh 5 < 2 (False)
+- > (lebih besar). Contoh 7 > 2 (True)
+- <= (lebih kecil atau sama). Contoh 3 <= 3 (True)
+- >= (lebih besar atau sama). Contoh 8 >= 10 (False)
+
+D) Contoh Penerapan Boolean pada Python
+   1. x = 7
+      y = 4
+      print(x > y)
+    pada kode diatas akan menghasilkan ouput yaitu True, karena x nilainya lebih besar jika dibandingkan dengan nilai dari y.
+
+   2. import numpy as np
+      a = np.array([1, 9, 2, 7])
+      b = np.array([3, 4, 6, 5])
+
+      print("a > b:", a > b)
+    pada kode diatas akan menghasilkan output yaitu a > b: [False True False True]. sebab jika dibandingan satu persatu antara nilai a dan b, maka
+    1 > 3 (False), 9 > 4 (True), 2 > 6 (False), 7 > 5 (True).
+
+    3. import numpy as np
+
+       nilai_mahasiswa = np.array([85, 49, 70, 90, 52, 88, 95, 34])
+
+       kondisi_lulus = nilai_mahasiswa >= 60
+
+       print("Status Kelulusan:", kondisi_lulus)
+       print("Nilai yang Lulus:", nilai_mahasiswa[kondisi_lulus])
+    pada kode diatas akan menghasilkan output Status Kelulusan: [ True False  True  True False  True  True False] dan Nilai yang Lulus: [85 70 90 88 95]
