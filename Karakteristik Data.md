@@ -4,7 +4,8 @@ NumPy merupakan library esensial di Python, yang menyediakan alat fundamental un
 
 ### Karakteristik data
 
-```.ndim	(Number of Dimensions)	
+```
+.ndim	(Number of Dimensions)	
 Menunjukkan jumlah sumbu (axis) yang dimiliki array. Misalnya, vektor memiliki ndim=1, matriks memiliki ndim=2. Ini mendefinisikan "tingkat kedalaman" array.
 
 .shape	(Shape of Array)	
