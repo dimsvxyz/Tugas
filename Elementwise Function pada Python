@@ -1,0 +1,57 @@
+A) Definisi
+Adalah fungsi yang dioperasikan pada setiap elemen secara individual dalam sebuah array. Setiap elemen diproses secara independen, dan hasil operasi 
+menghasilkan output dengan dimensi yang sama seperti input. Dalam artian jika kita memiliki sebuah array berisi angka-angka, maka fungsi elementwise akan menghitung 
+hasilnya untuk setiap angka dalam array tersebut satu per satu, kemudian akan menghasilkan array baru yang sesuai dengan bentuk array aslinya.
+Berikut tujuan dan fungsi dari elementwise :
+- Mengurangi penggunaan loop manual yang kurang efisien untuk array berukuran besar
+- Menyederhanakan dan mengurangi kode yang kompleks agar lebih mudah dibaca
+- Mempertahankan struktur data yang asli agar data tetap konsisten
+- Lebih cepat saat diterapkan dari pada menggunakan ietrasi biasa
+
+B) Jenis- jenis Elementwise Function dalam Numpy
+Pada numpy terbagi menjadi 2 jenis fungsi elemntwise:
+  1. Fungsi Matematika Dasar (satu input, satu output)
+     Fungsi ini akan menerima satu array sebagai input dan mengembalikan array baru dengan hasil yang telah diterapkan pada setiap elemen.
+     - np.sin, np.cos, np.tan (fungsi trigonometri)
+     - np.arcsin, np.arccos, np.arctan (fungsi invers trigonometri)
+     - np.sqrt (fungsi akar kuadrat)
+     - np.exp (fungsi eksponensial)
+     - np.log, np.log2, np.log10 (logarotma natural, basis 2, basis 10)
+       
+  2. Operasi matematika antara dua array (dua input, satu output)
+     Fungsi ini akan menerima dua array yang kemudian akan melakukan operasi per tiap elemen antara keduanya.
+     - np.add(a, b) artinya penjumlahan antara a dan b atau (a + b)
+     - np.subtracts(a, b) artinya penurangan antara a dan b atau (a - b)
+     - np.multiply(a, b) artinya perkalian antara a dan b (a * b)
+     - np.divide(a, b) artinya pembagian antara a dan b (a / b )
+     - np.power(a, b) artinya perpangkatan antara a dan b (a ** b)
+     - np.remainder(a, b) artinya sisa bagi antara a dengan b (a % b)
+     - np.abs(a) artinya nilai absolut
+     - np.sign(a) artinya tanda dari sebuah bilangan (-1, 0 , 1)
+     - np.floor(a), np.ceil(a), np.rint(a) artinya pembulatan kebawah, keatas ataupun terdekat
+
+  C) Contoh penerapan penggunaan elementwise function
+     1. import numpy as np
+        angka = np.array([1, 4, 9, 16, 25])
+
+        print("Akar kuadrat:", np.sqrt(angka))
+        print("Pangkat 2:", np.power(angka, 2))
+        print("Pangkat 3:", np.power(angka, 3))
+      berdasarkan kode diatas maka output yang akan dihasilkan yaitu:
+      Akar kuadrat: [1. 2. 3. 4. 5.]
+      Pangkat 2: [  1  16  81 256 625]
+      Pangkat 3: [    1    64   729  4096 15625]
+
+    2. import numpy as np
+       a = np.array([15, 7, 21, 36, 40])
+       b = np.array([1, 2, 3, 4, 5])
+
+       print("Penjumlahan:", np.add(a, b))
+       print("Pengurangan:", np.subtract(a, b))
+       print("Perkalian:", np.multiply(a, b))
+       print("Pembagian:", np.divide(a, b))
+      berdasarkan kode diatas maka output yang akan dihasilkan yaitu:
+      Penjumlahan: [16  9 24 40 45]
+      Pengurangan: [14  5 18 32 35]
+      Perkalian: [ 15  14  63 144 200]
+      Pembagian: [15.   3.5  7.   9.   8. ]
