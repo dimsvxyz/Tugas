@@ -1,0 +1,36 @@
+A) Definisi
+Operasi aritmatika adalah operasi matematika dasar yang meliputi penjumlahan, pengurangan, perkalian, pembagian, dan operasi matematika lainnya.
+Dalam konteks pemrograman dengan Python baik menggunakan struktur data bawaan seperti list maupun pustaka ilmiah seperti NumPy, operasi aritmatika ini dapat
+membantu kita untuk melakukan perhitungan matematis secara lebih efisien.
+Berikut merupakan tujuan dan penggunaan operasi aritmatika:
+- Mempermudah dan memperepat proses pengolahan data dibandingkan penggunaan loop manual
+- Melakukan operasi pada setiap elemen dari array
+
+B) Operator dalam Aritmatika
+- penjumlahan atau addition (+)
+- Pengurangan atau subtraction (-)
+- Perkalian atau multiplication (*)
+- Pembagian atau division (/)
+- Sisa bagi atau modulus (%), digunakan untuk mencari sisa pembagian dari 2 operant. Contoh 9 % 3 itu hasilnya 3 karena pembagian 9 dengan 3, itu hasilnya
+ adalah bilangan bulat 3 tanpa menyisakan angka koma di belakangnya. sedangkan jika 9 % 5 itu hasilnya 4 mengapa demikian, karena hasil pembagian 9 dengan 5 itu adalah 1,8
+ yang artinya menyisakan 0,8 jika kita kalikan angka tersebut dengan 5 maka hasilnya adalah 4.
+- Perpangkatan atau exponential (**)
+- Pembagian bulat atau floor division (//)
+
+C) Contoh Penerapan Operasi Aritmatika pada Python
+   1. x = 15
+      y = 4
+
+      print("x + y =", x + y)
+      print("x - y =", x - y)
+      print("x / y =", x / y)
+      print("x % y =", x % y)
+      print("x ** y =", x ** y)
+      print("x // y =", x // y)
+       pada kode diatas akan menghasilkan output yaitu :
+   x + y = 19
+   x - y = 11
+   x / y = 3.75
+   x % y = 3
+   x ** y = 50625
+   x // y = 3
