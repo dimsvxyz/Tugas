@@ -2,7 +2,7 @@ Di NumPy, dtype bukan sekadar label namun sebuah objek metadata yang memberi tah
 
 ## Tipe Data
 
-A. Integer (Bilangan Bulat)
+'''A. Integer (Bilangan Bulat)
 NumPy membagi integer menjadi tipe bertanda (signed) (dapat menyimpan positif dan negatif) dan tak bertanda (unsigned) (hanya positif). 
 
 np.int64	64-bit	Rentang nilai yang sangat besar	Tipe default untuk integer, menjamin keamanan data.
@@ -39,18 +39,18 @@ float_array = np.array([ , , , ], dtype=np.float64)
 print("Floating Point Array:", float_array, "dtype:", float_array.dtype)
 
 uint_array = np.array([ , , , ], dtype=np.uint8)
-print("Unsigned Int Array:", uint_array, "dtype:", uint_array.dtype, "\n")
+print("Unsigned Int Array:", uint_array, "dtype:", uint_array.dtype)
 
 complex_array = np.array([ , , , ], dtype=np.complex64)
-print("Complex Array:", complex_array, "dtype:", complex_array.dtype, "\n")
+print("Complex Array:", complex_array, "dtype:", complex_array.dtype)
 
 bool_array = np.array([ , , , ], dtype=np.bool_)
-print("Boolean Array:", bool_array,"dtype:", bool_array.dtype, "\n")
+print("Boolean Array:", bool_array,"dtype:", bool_array.dtype)
 
 datetime_array = np.array([ , , , ], dtype='datetime64[D]')
-print("Datetime Array:", datetime_array, "dtype:", datetime_array.dtype, "\n")
+print("Datetime Array:", datetime_array, "dtype:", datetime_array.dtype)
 
 string_array = np.array(["Halo", "NumPy", "DataScience", "Kece"], dtype='<U...')
-print("Unicode String Array:", string_array, "dtype:", string_array.dtype, "\n")
+print("Unicode String Array:", string_array, "dtype:", string_array.dtype)
 
 
