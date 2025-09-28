@@ -1,1 +1,92 @@
+Agregasi Array
+
+  Agregasi artinya melakukan penggabungan atau perhitungan dari sekumpulan data.
+Pada list di Python, agregasi bisa berupa:
+  1. Penggabungan > menyatukan dua list.
+  2. Operasi matematis > menjumlahkan, mencari rata-rata, maksimum, minimum.
+
+1. Penggabungan 
+    Penggabungan dua array atau list bisa dilakukan dengan cara mengunakan 
+operator + atau fungsi extend().
+
+a.) Menggunakan '+'
+'''python
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+gabung = a + b
+print(gabung)  #akan menghasilkan [1, 2, 3, 4, 5, 6]
+
+b.) Menggunakan 'extend()'
+'''python
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+a.extend(b)
+print(a)  #ini juga akan menghasilkan [1, 2, 3, 4, 5, 6]
+
+2. Operasi Matematis
+  Selain menggabungkan array atau list, kita juga bisa melakukan operasi matematika,
+yaitu : Menjumlahkan, Mencari Max dan Min, bisa juga mencari Rata-Rata.
+
+a.) Penjumlahan 
+    Menggunakan fungsi 'sum()'
+    '''python
+    angka = [10, 20, 30, 40]
+    print(sum(angka))  #akan menunjukan hasil penjumlahan array yaitu '100'
+b.) Mencari Max dan Min
+    Menggunakan fungsi 'max()' dan 'min()'
+    '''python
+    angka = [10, 20, 30, 40]
+    print(max) #max akan menunjukan hasil angka terbesar dalam array yaitu '40'
+    print(min) #jika min, akan menunjukan hasil sebaliknya atau angka terkecil yaitu '10'
+c.) Mengitung Rata-Rata
+    Python tidak memiliki fungsi untuk menghitung rata-rata, maka dari itu kita harus membuatnya secara manual
+    atau bisa juga menggunakan library 'statistics'
+    - Manual
+    '''python
+    angka = [10, 20, 30, 40]
+    rata = sum(angka) / len(angka)
+    print(rata) #sum(angka) menghasilkan 100 dan len(angka) adalah 4, maka 100/4 = 25
+    - Library 'statistics'
+    '''python
+    import statistics
+    angka = [10, 20, 30, 40]
+    print(statistics.mean(angka)) #ini akan langsung menunjukan hasil rata ratanya yaitu 25
+
+Agregasi Elemen Per-baris Pada Elemen 2D
+
+ Untuk list multidimensi misalnya matriks, kita juga bisa untuk melakukan agregasi per-baris atau per-kolom.
+ contoh :
+ '''python
+ matrix = [
+    [1, 2, 3], 
+    [4, 5, 6],   
+    [7, 8, 9]    
+ ]
+
+ for i, baris in enumerate(matrix):
+     print(f"Jumlah baris {i}: {sum(baris)}") #Jumlah baris 0 adalah '6', Jumlah baris 1 adalah '15', dan Jumlah pada baris 2 adalah '24'
+
+Agregasi Dengan Library 'numpy'
+
+  Menggunakan library 'numpy' akan lebih mudah dan efisien, ini juga akan lebih memudahkan saat datanya besar.
+cara menggunakannya mudah, hanya perlu mengimpor saja
+'''python
+import numpy as np
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+print(a + b)  #ini akan menghasilkan [5 7 9]
+print(a * b)  #jika ini menghasilkan [4 10 18]
+
+print(np.sum(a))    #menjumlahkan array a dan menghasilkan '6'
+print(np.max(b))    #menunjukan nilai terbesar pada array b yaitu '6'
+print(np.min(b))    #menunjukan nilai terkecil pada array b yaitu '4'
+print(np.mean(b))   #menghitung rata rata pada array b yang menhasilkan '5'
+
+
+
+    
 
