@@ -1,1 +1,73 @@
+Apa itu Array Multidimensi?
+
+  Array multidimensi adalah struktur data yang merupakan susunan dari beberapa array, sehingga memungkinkan data disimpan dalam format yang lebih kompleks.
+Seperti tabel (dua dimensi) atau bahkan bentuk kubus (tiga dimensi) dan seterusnya. Adapun jenis-jenis Array Multidimensi :
+
+1. Array 1D (hanya deretan elemen)
+    contoh : 
+    '''python
+      angka = [1, 2, 3, 4, 5]
+2. Array 2D (berisi list lain, biasanya ini berupa tabel atau matriks)
+    contoh :
+    '''python
+      matriks = [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+3. Array 3D (ini biasanya berisi list 2D, namun dipakai untuk data yang lebih kompleks, misalnya gambar RGB)
+
+Cara Membuat Array Multidimensi
+
+a.) Manual
+    '''python
+      matriks = [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+b.) Perulangan
+    '''python
+      matriks = [[0, for _ in range(3)] for _ in range(3)]
+      print(matriks)
+c.) Library 'numpy'
+    '''python
+      import numpy as np
+      matrix = np.array([
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]
+      ])
+      print(matrix.shape)
+
+Mengakses Elemen
+
+  Untuk mengakses elemen kita bisa menggunakan : 
+array[baris][kolom]
+
+  contoh : 
+  '''python
+  matriks = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+  ]
+  print(matriks[3][3]) #ini akan menunjukan 9
+
+Modifikasi Elemen 
+
+  Untuk memodifikasi elemen kita bisa menggunakan :
+'''python
+matriks = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+
+matriks[2][2] = 23
+print(matriks) #ini akan menjadikan matriks berubah pada indeks ke [2][2] yang sebelumnya 5 menjadi 23
+
+
+
+
 
