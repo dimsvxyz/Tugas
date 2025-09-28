@@ -1,1 +1,36 @@
+Pengertian Array 
 
+  Array adalah struktur data yang berfungsi sebagai kumpulan beberapa nilai atau elemen yang disimpan dalam satu nama variabel dan terletak di lokasi memori yang berurutan. 
+Dalam Python, struktur data yang menyerupai array disebut list.
+List digunakan untuk menyimpan sekumpulan nilai dalam satu variabel.
+
+    Ciri-ciri list di Python :
+      1. Bisa Menyimpan berbagai tipe data sekaligus : Angka, String, Boolean, dll
+      2. Bisa dirubah ukurannya dengan menambah atau mengurangi elemen
+      3. Indeks-nya selalu dimulai dari 0
+
+  Contoh Array : 
+  '''python
+    buah = ['Nanas', 'Nangka', 'Durian']
+    angka = [1, 2, 3]
+    campuran = [1, 'Durian', 3.0, True]
+
+Cara Membuat Array
+
+  Ada beberapa teknik / cara untuk membuat Array :
+a.) Dengan kurung siku '[]'
+      contoh : 
+      '''Python
+        nama = ['Dimas', 'Zalsa', 'Ritsa', 'Abi']
+b.) Menggunakan fungsi 'list()'
+      contoh :
+      '''python
+        huruf = list('telkom') #ini akan menjadikan ['t', 'e', 'l', 'k', 'o', 'm']
+c.)  Menggunakan range 'range()'
+      contoh :
+      '''python
+        angka = range(3) #ini juga akan menjadikan [1, 2, 3]
+d.) Menggandakan nilai 
+      contoh :
+      '''python
+        nol = [0] * 4 #ini akan menjadikan [0, 0, 0, 0]
