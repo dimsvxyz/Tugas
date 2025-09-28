@@ -86,7 +86,3 @@ print(np.max(b))    #menunjukan nilai terbesar pada array b yaitu '6'
 print(np.min(b))    #menunjukan nilai terkecil pada array b yaitu '4'
 print(np.mean(b))   #menghitung rata rata pada array b yang menhasilkan '5'
 
-
-
-    
-
