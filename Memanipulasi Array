@@ -1,1 +1,95 @@
+Manipulasi Array?
+
+  Manipulasi array (list) berarti mengubah isi, bentuk, atau susunan elemen di dalam array.
+Tujuan manipulasi biasanya untuk:
+
+  1. Menambah atau menghapus array
+  2. Mengganti elemen tertentu pada array
+  3. Mengurutkan atau membalik isi array
+  4. Menyalin atau memotong array
+
+1. Menambah atau menghapus data atau array
+    a.) Menambah array
+        - append(), ini digunakan untuk menambah nilai di akhir
+        '''python
+        angka = [1, 2, 3]
+        angka.append(4)
+        print(angka)  #akan menambah nilai pada indeks terakhir dan menunjukan hasil [1, 2, 3, 4]
+        - insert(), ini untuk menambah nilai di posisi tertentu
+        '''python
+        angka = [1, 2, 3]
+        angka.insert(1, 10)  
+        print(angka)   #akan menambah nilai di indeks ke 1 dan hasilnya adalah [1, 10, 2, 3]
+        - extend(), ini digunakan untuk meambah banyak elemen sekaligus
+        '''python
+        angka = [1, 2, 3]
+        angka.extend([4, 5, 6])
+        print(angka)   #akan menambah nilai dalam array menjadi [1, 2, 3, 4, 5, 6]
+    b.) Mengurangi array
+        - remove(), untuk menghapus berdasarkan nilai
+        '''python
+        buah = ["apel", "pisang", "jeruk"]
+        buah.remove("pisang")
+        print(buah)  # akan menghapus dan menunjukan ['apel', 'jeruk']
+        - pop(), ini juga untuk menghapus tetapi berdasarkan indeks
+        '''python
+        angka = [10, 20, 30, 40]
+        angka.pop(2)     
+        print(angka)  #akan menghapus indeks ke 2 [10, 20, 40]
+        - del, untuk menghapus elemen atau seluruh list
+        '''python
+        angka = [1, 2, 3, 4]
+        del angka[1]  
+        print(angka)  #akan menghapus indeks ke 1 dan menunjukan [1, 3, 4]
+        del angka[:]  #jika menggunakan ini maka akan menghapus semua elemen
+        print(angka)  #hasilnya akan kosong atau []
+
+2. Mengganti Elemen Tertentu
+    Kita juga bisa mengganti nilai atau elemen tertentu pada array secara langsung menggunakan indeks
+  '''python
+  buah = ["apel", "pisang", "jeruk"]
+  buah[1] = "mangga"
+  print(buah)  #akan langsung mengganti nilai pada indeks ke 1 menjadi ['apel', 'mangga', 'jeruk']
+
+3. Mengurutkan atau Membalik Isi Array 
+    a.) Mengurutkan list
+        - Sort
+        '''python
+        angka = [5, 2, 8, 1]
+        angka.sort()
+        print(angka) #akan langsung mengurutkan array menjadi [1, 2, 5, 8]
+        - sorted(), ini jika ingin mengurutkan tanpa mengubah list asli
+        '''python
+        angka = [5, 2, 8, 1]
+        baru = sorted(angka)
+        print(baru)  #akan mengurutkan array dengan indikator yang baru dan menunjukan hasil [1, 2, 5, 8]
+        print(angka)  #array akan tetap sama jika ingin di print [5, 2, 8, 1]
+    b.) Membalik Urutan List
+        - reverse()
+        '''python
+        buah = ["apel", "pisang", "jeruk"]
+        buah.reverse()
+        print(buah)  #maka akan terbalik menjadi ['jeruk', 'pisang', 'apel']
+
+4. Menyalin Atau Memotong Array
+    a.) Menyalin Array
+        - Copy
+        '''python
+        angka = [1, 2, 3]
+        salinan = angka.copy()
+        salinan.append(4)
+        print(angka)    #menunjukan angka [1, 2, 3]
+        print(salinan)  #akan menunjukan hasil salinan yang ditambah nilainya menjadi [1, 2, 3, 4]
+    b.) Memotong Array
+        Ini untuk mengambil sebagian array
+        '''python
+        angka = [10, 20, 30, 40, 50]
+        print(angka[1:4]) #akan menunjukan array indeks ke 1 hingga 3 menjadi [20, 30, 40] 
+        print(angka[:3]) #ini akan menujukkan array dari awal hingga indeks ke 2 karena angka ada diakhir menjadi [10, 20, 30]
+        print(angka[2:]) #jika angka diawal akan menjadikan hasil mulai dari indeks ke 2 sampai akhir [30, 40, 50] 
+        
+        *ada juga Format umum yang bisa digunakan : list[start:stop:step]
+        contoh dengan step :
+        '''python
+        print(angka[::2]) #maka ini akan mengambil tiap 2 elemen jadi itu akan menghasilkan [10, 30, 50]
 
